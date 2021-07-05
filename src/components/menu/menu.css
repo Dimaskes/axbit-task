@@ -1,0 +1,20 @@
+.header__menu {
+  font-size: 18px;
+  padding-top: 50px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+.header__menu a {
+  color: #242b35;
+}
+.header__menu-list-item {
+  margin-bottom: 5px;
+}
+
+.header__menu-list-item a:hover {
+  color: #7e5152;
+}
+.header__menu-list-item a.chosen {
+  border-bottom: 1.5px solid #242b35;
+}
