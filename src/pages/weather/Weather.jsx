@@ -3,11 +3,10 @@ import axios from 'axios';
 
 import { Menu } from '../../components/menu/Menu';
 import { WeatherBox } from '../../components/weather-box/WeatherBox';
+import { SearchForm } from '../../components/search-form/SearchForm';
 import { Error } from '../../components/error/Error';
 
 import { API } from '../../constants/api';
-
-import './weather.css';
 
 export const Weather = () => {
   const [query, setQuery] = React.useState('');
@@ -35,18 +34,7 @@ export const Weather = () => {
   return (
     <>
       <Menu />
-      <div className="search-form">
-        <input
-          type="text"
-          className="search-form__input"
-          placeholder="Название города..."
-          onChange={(e) => setQuery(e.target.value)}
-          value={query}
-        />
-        <button className="search-form__btn" onClick={searchHandle}>
-          Показать погоду
-        </button>
-      </div>
+      <SearchForm searchHandle={searchHandle} setQuery={setQuery} query={query} />
       {typeof weather.main !== 'undefined' && !error ? (
         <WeatherBox weather={weather} />
       ) : (
